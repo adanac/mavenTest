@@ -41,6 +41,23 @@ public class CatchTest {
 		return ret;
 	}
 
+	@SuppressWarnings("finally")
+	public static boolean decision() {
+		try {
+			return true;
+		} finally {
+			return false;
+		}
+	}
+
+	/**
+	 * false
+	 */
+	@Test
+	public void test_finally() {
+		System.out.println(decision());
+	}
+
 	/**
 	 * false,2
 	 */
