@@ -45,6 +45,9 @@ public class BigDecimalDivideTest {
 
 	}
 
+	/**
+	 * 判断小数点的位数
+	 */
 	@Test
 	public void test2() {
 		// 是否为组合码商品，如果是组合码商品，对其作定价金额校验
