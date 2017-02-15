@@ -2,7 +2,7 @@ package com.adanac.book.concurrency;
 
 public class ConcurrencyTest {
 
-	protected static final long count = 10000l;
+	protected static final long count = 10000L;
 	protected static final int count_exe = 10;
 
 	public static void main(String[] args) throws InterruptedException {

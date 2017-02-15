@@ -7,7 +7,7 @@ import com.allen.common.exception.ModifyFileException;
 public class BatchModifyFile {
 
 	public static void main(String[] args) {
-		String filePath = "E://adanac_book//我的笔记//";
+		String filePath = "E://adanac_book//我的笔记//资源//";
 		String suffixName = "md";
 		int count = batchModifySuffixName(filePath, suffixName);
 		System.out.println("修改了记录数：" + count);
