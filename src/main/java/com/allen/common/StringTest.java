@@ -1,12 +1,12 @@
 package com.allen.common;
 
+import org.apache.commons.lang.StringUtils;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.junit.Test;
-
-import com.alibaba.dubbo.common.utils.StringUtils;
 
 public class StringTest {
 
