@@ -1,18 +1,17 @@
-package com.allen.common;
+package com.allen.common.json.fastjson;
+
+import com.alibaba.fastjson.JSONArray;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.junit.Test;
-
-import com.alibaba.fastjson.JSONArray;
 
 public class JSONArrayTest {
 
 	@Test
 	public void test1() {
 
-		List<Object> list = new ArrayList<>();
+		List<Object> list = new ArrayList<Object>();
 		list.add(8000);
 		JSONArray sellerIdList = new JSONArray(list);
 		if (sellerIdList != null && sellerIdList.size() > 0) {

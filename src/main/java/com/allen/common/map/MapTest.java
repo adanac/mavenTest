@@ -1,13 +1,24 @@
-package com.allen.common;
+package com.allen.common.map;
+
+import com.alibaba.fastjson.JSON;
+import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-import org.junit.Test;
-
 public class MapTest {
+	@Test
+	public void testValues(){
+		Map<String, String> map = new LinkedHashMap<String, String>();
+		for (int i = 0; i < 10; i++) {
+			map.put("" + i + 1, "Name" + i);
+		}
+		System.out.println(map.values());
+		System.out.println(JSON.toJSONString(map.values()));
+		System.out.println(JSON.toJSONString(map));
+	}
 
 	@Test
 	public void test1() throws Exception {

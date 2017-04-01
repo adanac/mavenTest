@@ -1,8 +1,8 @@
-package com.allen.common;
-
-import java.util.Vector;
+package com.allen.common.collection.list;
 
 import org.junit.Test;
+
+import java.util.Vector;
 
 public class VectorTest {
 

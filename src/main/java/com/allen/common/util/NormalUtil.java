@@ -11,6 +11,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.junit.Test;
+
 import com.alibaba.fastjson.JSONArray;
 
 public class NormalUtil {
@@ -159,7 +161,7 @@ public class NormalUtil {
 	public static long getFormatPrice(String price) {
 		try {
 			return NormalUtil.GetLongByFloat(Double.parseDouble(price));
-		} catch (NumberFormatException | ParseException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return -1L;
@@ -167,5 +169,11 @@ public class NormalUtil {
 
 	public static void main(String[] args) {
 		System.out.println(getFormatPrice("80.88"));
+	}
+
+	@Test
+	public void testStr2Long() {
+		String str = "87.1";
+		System.out.println(new BigDecimal(str).longValue());
 	}
 }

@@ -10,6 +10,42 @@ import com.allen.common.util.MTConstants;
 import com.allen.common.util.NormalUtil;
 
 public class CatchTest {
+
+	public int inc(){
+		int x;
+		try {
+			x = 1;
+			throw new RuntimeException();
+		} catch (Exception e) {
+			System.out.println("into exception catch");
+			x = 2;
+			return x;
+		}finally{
+			x = 3;
+		}
+	}
+	public int inc2(){
+		int x;
+		try {
+			x = 1;
+			throw new RuntimeException();
+		} catch (Exception e) {
+			System.out.println("into exception catch");
+			x = 2;
+		}finally{
+			x = 3;
+		}
+		return x;
+	}
+
+	/**
+	 * 关键看return的位置
+	 */
+	@Test
+	public void test_catch_exception(){
+		System.out.println(inc());//2
+		System.out.println(inc2());//3
+	}
 	List<Object> checkParam(String param) {
 		List<Object> ret = new ArrayList<Object>();
 		List<String> codes = new ArrayList<String>();

@@ -19,7 +19,7 @@ import com.alibaba.fastjson.JSON;
 public class CombinationTest {
 
 	public static void main(String[] args) {
-		List<Map<String, Object>> list = new ArrayList<>();
+		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 
 		list.add(new HashMap<String, Object>() {
 			{

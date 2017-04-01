@@ -35,7 +35,7 @@ public class BankWaterService implements Runnable {
 					// 银流计算完成，插入一个屏障
 					try {
 						c.await();
-					} catch (InterruptedException | BrokenBarrierException e) {
+					} catch (Exception e) {
 						e.printStackTrace();
 					}
 				}

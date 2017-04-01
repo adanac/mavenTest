@@ -5,14 +5,18 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>maven test project</name>
-  
+
+
+    <properties>
+        <spring.version>4.3.0.RELEASE</spring.version>
+        <mysql-connector.version>5.1.40</mysql-connector.version>
+    </properties>
   <dependencies>
   	<!-- Junit -->
 	<dependency>
          <groupId>junit</groupId>
          <artifactId>junit</artifactId>
-         <version>4.10</version>
-         <scope>test</scope>
+         <version>4.12</version>
      </dependency>
      <dependency>
      	<groupId>commons-lang</groupId>
@@ -26,16 +30,26 @@
      	<artifactId>fastjson</artifactId>
      	<version>1.2.6</version>
      </dependency>
+     
+     <!-- Json-lib -->
      <dependency>
      	<groupId>net.sf.json-lib</groupId>
      	<artifactId>json-lib</artifactId>
      	<version>2.4</version>
      	<classifier>jdk15</classifier>
      </dependency>
+     
+     <!-- Org-json -->
+     <dependency>
+	    <groupId>org.json</groupId>
+	    <artifactId>json</artifactId>
+	    <version>20160810</version>
+	 </dependency>
+     
      <dependency>
      	<groupId>mysql</groupId>
      	<artifactId>mysql-connector-java</artifactId>
-     	<version>5.1.39</version>
+     	<version>${mysql-connector.version}</version>
      </dependency>
      
      <!-- Slf4j -->
@@ -49,6 +63,16 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.6.6</version>
         </dependency>
+      <dependency>
+          <groupId>org.testng</groupId>
+          <artifactId>testng</artifactId>
+          <version>RELEASE</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-core</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
   </dependencies>
    
 </project>

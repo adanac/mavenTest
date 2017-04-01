@@ -1,10 +1,10 @@
-package com.allen.common;
+package com.allen.common.collection.list;
+
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import org.junit.Test;
 
 public class ListTest {
 	@Test
@@ -172,7 +172,5 @@ public class ListTest {
 		list.add(listIn);
 		System.out.println(list.get(0));
 		System.out.println(list.get(1));
-
 	}
-
 }
