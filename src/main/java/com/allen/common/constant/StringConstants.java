@@ -23,6 +23,9 @@ public class StringConstants {
     public static final String GENDER_MALE = "男";
     public static final String GENDER_FEMALE = "女";
     public static final String COMMA = ",";
+    public static final String FEN_CN_SEPARATOR = "；";
+    public static final String FEN_EN_SEPARATOR = ";";
+    public static final String SUCCESS = "SUCCESS";
 
     public static final String CHARSET = "UTF8";
 }

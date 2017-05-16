@@ -1,9 +1,9 @@
 package com.allen.common;
 
+import org.junit.Test;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-
-import org.junit.Test;
 
 public class BigDecimalDivideTest {
 	@Test
@@ -41,6 +41,36 @@ public class BigDecimalDivideTest {
 		} catch (Exception e) {
 			System.out.println("Non-terminating decimal expansion; no exact representable decimal result.");
 			e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 * 判断小数点的位数
+	 */
+	@Test
+	public void test3() {
+		// 是否为组合码商品，如果是组合码商品，对其作定价金额校验
+		// 定价金额做强制校验：（定价金额*每行SKU分摊比例）/包含商品数不允许除不尽（小数点后两位）
+		boolean flag = true;
+		// 组合码商品
+		BigDecimal bsetprice = new BigDecimal("19.9");// （定价金额）页面展示58
+		BigDecimal bshareratio = new BigDecimal("5000");// （分摊比例）页面展示40%，但C++接口combInfoPo.getShareRatio()返回4000，所以最终结果要再处以10000.
+		long combSkuNum = 10;// 商品数量
+		BigDecimal finalResesult = bsetprice.multiply(bshareratio).divide(new BigDecimal(combSkuNum));// （combSkuNum：商品数量）
+		BigDecimal temp = finalResesult.divide(new BigDecimal(10000));
+		String check = temp.toString();
+		if (check.indexOf(".") >= 0) {
+			int dot = check.indexOf(".");
+			String dotNum = check.substring(dot + 1, check.length());
+			System.err.println("check:" + check + "\tdotNum:" + dotNum);
+			if (dotNum.length() > 2) {
+				flag = false;
+			}
+		}
+		System.err.println("flag:" + flag);
+		if (!flag) {
+			System.err.println("验证失败。。。。。。。。。。");
 		}
 
 	}
