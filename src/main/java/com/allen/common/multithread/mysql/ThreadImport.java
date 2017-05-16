@@ -1,5 +1,7 @@
 package com.allen.common.multithread.mysql;
 
+import org.junit.Test;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -7,8 +9,12 @@ import java.sql.Statement;
 import java.util.UUID;
 import java.util.concurrent.CountDownLatch;
 
-import org.junit.Test;
-
+/**
+ * CREATE TABLE `demo_table` (
+	 `a` varchar(64) DEFAULT NULL,
+	 `b` varchar(64) DEFAULT NULL
+	 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+ */
 public class ThreadImport {
 	private String url = "jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf8";
 	private String user = "root";
@@ -67,12 +73,12 @@ public class ThreadImport {
 	@Test
 	public void test_thread1() {
 		ThreadImport ti = new ThreadImport();
-		ti.multiThreadImport(1);// 1个线程花费时间:39600
-		ti.multiThreadImport(5);// 5个线程花费时间:12201
+		//ti.multiThreadImport(1);// 1个线程花费时间:39600
+//		ti.multiThreadImport(5);// 5个线程花费时间:12201
 		ti.multiThreadImport(8);// 8个线程花费时间:8911
-		ti.multiThreadImport(10);// 10个线程花费时间:8673
-		ti.multiThreadImport(20);// 20个线程花费时间:6564
-		ti.multiThreadImport(40);// 40个线程花费时间:9411
+//		ti.multiThreadImport(10);// 10个线程花费时间:8673
+//		ti.multiThreadImport(20);// 20个线程花费时间:6564
+//		ti.multiThreadImport(40);// 40个线程花费时间:9411
 		System.out.println("笔记本CPU数:" + Runtime.getRuntime().availableProcessors());
 	}
 
